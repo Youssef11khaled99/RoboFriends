@@ -5,6 +5,8 @@ import SearchBox from '../components/SearchBox';
 import './App.css';
 import '../components/LoadingScreen.css';
 import Scroll from '../components/Scroll';
+import Loading from '../components/Loading';
+
 class App extends Component {
     constructor(){
         super()
@@ -30,10 +32,7 @@ class App extends Component {
         })
         if (!robots.length) {
             return (
-                <div>
-                    <div class="back"><h1 className='tc'>Loading ....</h1></div>
-                    <div class="cube"></div>
-                </div>
+                <Loading />
             );
         }else {
             return(
