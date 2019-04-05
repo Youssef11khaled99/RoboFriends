@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import CardList from './CardList';
+import CardList from '../components/CardList';
 //import {robots} from './robots';
-import SearchBox from './SearchBox';
+import SearchBox from '../components/SearchBox';
 import './App.css';
-import './LoadingScreen.css';
-import Scroll from './Scroll';
+import '../components/LoadingScreen.css';
+import Scroll from '../components/Scroll';
 class App extends Component {
     constructor(){
         super()
@@ -24,11 +24,11 @@ class App extends Component {
         this.setState({searchValue : event.target.value})
     }
     render() {
-        
-        const filteredRobots = this.state.robots.filter((robot) => {
-            return robot.name.toLowerCase().includes(this.state.searchValue.toLowerCase())
+        const {robots, searchValue} = this.state;
+        const filteredRobots = robots.filter((robot) => {
+            return robot.name.toLowerCase().includes(searchValue.toLowerCase())
         })
-        if (this.state.robots.length === 0) {
+        if (!robots.length) {
             return (
                 <div>
                     <div class="back"><h1 className='tc'>Loading ....</h1></div>
