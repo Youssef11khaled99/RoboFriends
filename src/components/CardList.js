@@ -3,6 +3,10 @@ import Card from './Card';
 
 const CardList = ({robots}) => {
     const CardArray = robots.map((user, i) => {
+        /* TO show what will happened if any error occurs
+        if (true) {
+            throw new Error('NOOOOOOOOOOOOO') ;
+        }*/
         return (
         <Card 
             key={robots[i].id} 
